@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"lession2/code"
+	"lession2/week2/code"
 
 	code_errors "github.com/pkg/errors"
 )
