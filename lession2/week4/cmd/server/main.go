@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	pb "lession2/week4/api/user/v1"
+	userInfo "lession2/week4/api/user/v1"
 	"lession2/week4/internal/pkg/grpc"
 	"lession2/week4/internal/service"
 
@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	address = ":9800"
+	address = ":8100"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 
 	// register grpc service
 	s := grpc.NewServer(address)
-	pb.RegisterUserServer(s, service)
+	userInfo.RegisterUserServer(s, service)
 
 	// context
 	ctx, cancel := context.WithCancel(context.Background())

@@ -3,9 +3,10 @@
 package biz
 
 type User struct {
-	ID   int32
-	Name string
-	Age  int32
+	ID        int32
+	Name      string
+	Age       int32
+	Telephone int16
 }
 
 type UserRepo interface {
