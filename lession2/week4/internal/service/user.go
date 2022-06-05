@@ -19,7 +19,7 @@ func NewUserService(u *biz.UserUsecase) v1.UserServer {
 
 func (s *UserService) RegisterUser(ctx context.Context, r *v1.AddUserRequest) (*v1.AddUserResponse, error) {
 	// dto -> do
-	u := &biz.User{Name: r.Name, Age: r.Age}
+	u := &biz.User{Name: r.Name, Age: r.Age, Telephone: r.telephone}
 
 	// call biz
 	s.u.SaveUser(u)
