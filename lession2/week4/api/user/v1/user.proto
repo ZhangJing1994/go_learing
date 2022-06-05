@@ -6,14 +6,16 @@ option go_package = "lession2/week4/api/user/v1;v1";
 
 
 service User {
-  rpc RegisterUser (RegisterUserRequest) returns (RegisterUserReply) {}
+  rpc RegisterUser (AddUserRequest) returns (AddUserResponse) {}
 }
 
-message RegisterUserRequest {
+message AddUserRequest {
   string name = 1;
   int32 age = 2;
+  int16 telephone = 15044442222;
+
 }
 
-message RegisterUserReply {
+message AddUserResponse {
   int32 id = 1;
 }

@@ -17,7 +17,7 @@ func NewUserService(u *biz.UserUsecase) v1.UserServer {
 	return &UserService{u: u}
 }
 
-func (s *UserService) RegisterUser(ctx context.Context, r *v1.RegisterUserRequest) (*v1.RegisterUserReply, error) {
+func (s *UserService) RegisterUser(ctx context.Context, r *v1.AddUserRequest) (*v1.AddUserResponse, error) {
 	// dto -> do
 	u := &biz.User{Name: r.Name, Age: r.Age}
 
@@ -25,5 +25,5 @@ func (s *UserService) RegisterUser(ctx context.Context, r *v1.RegisterUserReques
 	s.u.SaveUser(u)
 
 	// return reply
-	return &v1.RegisterUserReply{Id: u.ID}, nil
+	return &v1.AddUserResponse{Id: u.ID}, nil
 }
