@@ -1,0 +1,23 @@
+[root@dev redis-6.2.7]# redis-benchmark  -d 5000 -t  get,set
+====== SET ======
+  100000 requests completed in 0.89 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+99.01% <= 1 milliseconds
+100.00% <= 1 milliseconds
+111731.84 requests per second
+
+====== GET ======
+  100000 requests completed in 0.95 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+99.10% <= 1 milliseconds
+99.88% <= 2 milliseconds
+99.90% <= 4 milliseconds
+99.95% <= 8 milliseconds
+100.00% <= 8 milliseconds
+105596.62 requests per second
